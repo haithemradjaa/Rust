@@ -1,0 +1,1 @@
+/home/someone/Computer\ science\ learning\ and\ teaching/Rust/My\ notes\ learning\ Rust/hello_cargo/target/debug/hello_cargo: /home/someone/Computer\ science\ learning\ and\ teaching/Rust/My\ notes\ learning\ Rust/hello_cargo/src/main.rs
