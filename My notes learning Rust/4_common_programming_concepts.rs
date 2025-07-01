@@ -51,7 +51,7 @@
 //   - All floating-point types are signed and follow the IEEE-754 standard.
 // - Booleans: The `bool` type, with values `true` or `false`. They are one
 //   byte in size and are commonly used in conditional expressions.
-// - Characters: The `char` type, specified with single quotes (e.g., 'z', '😻').
+// - Characters: The `char` type, specified with single quotes (e.g., 'z').
 //   They are four bytes in size and represent a Unicode Scalar Value, allowing
 //   for a wide range of characters beyond ASCII.
 //
