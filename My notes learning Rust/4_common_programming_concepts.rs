@@ -1,3 +1,4 @@
+// Variables :
 // In Rust, variables are immutable by default.
 // This design choice promotes safety and easier concurrency.
 // To make a variable mutable, the `mut` keyword must be used before its name, for example: `let mut x = 5;`.
@@ -23,6 +24,7 @@
 // Using `mut` for a type change would result in a compile-time error (E0308) because `mut` does not allow changing a variable's type.
 // Shadowing helps avoid the need for different variable names like `spaces_str` and `spaces_num`.
 
+// Data Types :
 // Every value in Rust has a data type, which tells Rust how to work with it.
 // Rust is a statically typed language, meaning types are known at compile time.
 // The compiler usually infers types, but explicit type annotations like `: u32`
@@ -79,3 +81,72 @@
 //   - For collections that can grow or shrink in size, the `Vec` (vector) type
 //     from the standard library is generally preferred over arrays.
 
+// Functions :
+// Functions are declared using the `fn` keyword.
+// The `main` function is the entry point of many Rust programs.
+// Rust convention for function and variable names is snake_case (lowercase with underscores).
+// Function bodies are enclosed in curly brackets `{}`.
+// Functions can be called by their name followed by parentheses `()`.
+// The order of function definitions does not matter, as long as they are in scope.
+//
+// Functions can have parameters, which are special variables in the function's signature.
+// You must declare the type of each parameter in the function signature (e.g., `x: i32`).
+// Multiple parameters are separated by commas (e.g., `(value: i32, unit_label: char)`).
+//
+// Function bodies consist of statements and expressions.
+// Statements perform actions and do not return a value (e.g., `let y = 6;`).
+// Expressions evaluate to a resultant value (e.g., `5 + 6`, `x + 1`).
+// Calling a function or macro is an an expression.
+// A new scope block created with curly brackets `{}` can also be an expression.
+// Expressions do not include ending semicolons.
+// Adding a semicolon to an expression turns it into a statement, preventing it from returning a value.
+// You cannot assign a `let` statement to another variable because statements do not return values.
+//
+// Functions can return values, declared after an arrow `->` in the signature (e.g., `-> i32`).
+// The return value is typically the value of the final expression in the function body.
+// If the final expression does not have a semicolon, its value is implicitly returned.
+// Using the `return` keyword allows for early returns.
+// If a function is declared to return a value but its body ends with a statement (due to a semicolon),
+// it implicitly returns `()` (the unit type), leading to a type mismatch error.
+
+// Comments :
+// Comments in Rust are written using `//` for single-line comments and `/* ... */` for multi-line comments.
+// Comments are not included in the compiled code.
+//
+// Single-line comments start with `//` and continue to the end of the line.
+
+// Control Flow :
+// Basic building blocks for controlling execution are if expressions and loops.
+//
+// if Expressions:
+// Allow branching code based on conditions.
+// Syntax: `if condition { ... } else { ... }`.
+// The condition must always be a `bool`. Rust does not implicitly convert other types to `bool`.
+// `else if` can handle multiple conditions; only the first true condition's block executes.
+// `if` is an expression, meaning its result can be assigned to a variable.
+// All branches (if, else if, else) of an `if` expression must return the same type.
+//
+// Repetition with Loops:
+// Rust has three types of loops: `loop`, `while`, and `for`.
+//
+// `loop`:
+// Executes a block of code repeatedly forever until explicitly stopped.
+// `break` keyword stops the loop.
+// `continue` keyword skips to the next iteration.
+// A `loop` can return a value by placing it after the `break` expression.
+// `return` exits the current function, not just the loop.
+// Loop labels (e.g., `'label: loop { ... }`) can be used with `break 'label` or `continue 'label`
+// to specify which nested loop to affect.
+//
+// `while`:
+// Executes a block of code repeatedly as long as a given condition is true.
+// More concise than combining `loop`, `if`, and `break` for conditional repetition.
+// Can iterate over collections, but is less safe and potentially slower than `for` loops
+// due to manual index management and runtime bounds checks.
+//
+// `for`:
+// The most commonly used loop construct in Rust.
+// Iterates safely and concisely over each item in a collection.
+// Example: `for element in collection { ... }`.
+// Eliminates the risk of out-of-bounds errors and is generally preferred for iterating collections.
+// Can also be used to run code a certain number of times using a `Range` (e.g., `(1..4).rev()`).
